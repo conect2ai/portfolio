@@ -1,28 +1,73 @@
-# Descarbonize.ai - Portfólio
+# 🚗 Descarbonize.ai - Portfólio
 
-Bem-vindo ao repositório do front-end oficial do **Descarbonize.ai**, uma iniciativa inovadora vinculada à plataforma **Conect2Ai**. Este site serve como portfólio interativo para apresentar nossa metodologia, arquitetura e a produção científica por trás do projeto.
+Bem-vindo ao repositório do front-end oficial do **Descarbonize.ai**, uma iniciativa inovadora vinculada à plataforma **Conect2Ai**. Este site serve como **portfólio interativo** para apresentar nossa metodologia, arquitetura e a produção científica por trás do projeto.
 
 ---
 
-## Sobre o Projeto
-O Descarbonize.ai tem como objetivo central promover a mobilidade sustentável e a redução das emissões de carbono no setor de transporte. Criamos um sistema de conectividade veicular que avalia a eficiência energética e estabelece um serviço de monetização seguro, gerando microcréditos de carbono para condutores eficientes.
+# 🌱 Sobre o Projeto
+
+O **Descarbonize.ai** tem como objetivo central **promover a mobilidade sustentável e a redução das emissões de carbono no setor de transporte**.
+
+Criamos um sistema de **conectividade veicular inteligente** que avalia a eficiência energética e estabelece um **serviço de monetização seguro**, gerando **microcréditos de carbono para condutores eficientes**.
 
 Nosso ecossistema atua em três frentes principais:
-1. **Conectividade Veicular:** Telemetria avançada focada no monitoramento ambiental.
-2. **IA na Borda (TinyML):** Análise profunda de dados e anomalias diretamente nos dispositivos embarcados.
-3. **Monetização via Blockchain:** Registro seguro e imutável das emissões de CO2, convertendo a condução sustentável em ativos ambientais (NFTs).
+
+### 1️⃣ Conectividade Veicular
+Telemetria avançada focada no **monitoramento ambiental** e na coleta de dados de condução.
+
+### 2️⃣ IA na Borda (TinyML)
+Aplicação de **Inteligência Artificial diretamente nos dispositivos embarcados**, permitindo:
+- Análise profunda dos dados
+- Detecção de anomalias
+- Alta eficiência energética
+
+### 3️⃣ Monetização via Blockchain
+Registro **seguro, transparente e imutável** das emissões de CO₂ utilizando blockchain.
+
+A condução sustentável é convertida em **ativos ambientais digitais (NFTs)**, possibilitando a geração de **microcréditos de carbono**.
 
 ---
 
-## Instituições e Parceiros
-Este projeto é fruto de uma colaboração técnico-científica de excelência, unindo academia e indústria automotiva:
+# 🤝 Instituições e Parceiros
 
-* **Instituições de Pesquisa:** UFRN, UFPB, Inmetro, FUNPEC e Fundep Mover.
-* **Empresas Parceiras:** Embeddo Computação Aplicada, VWTB, FCA Fiat Chrysler (Stellantis) e Peugeot Citroen.
+Este projeto é fruto de uma **colaboração técnico-científica de excelência**, unindo academia e indústria automotiva.
+
+## Instituições de Pesquisa
+- **UFRN**
+- **UFPB**
+- **Inmetro**
+- **FUNPEC**
+- **Fundep Mover**
+
+## Empresas Parceiras
+- **Embeddo Computação Aplicada**
+- **VWTB**
+- **FCA Fiat Chrysler (Stellantis)**
+- **Peugeot Citroen**
 
 ---
 
-## Produção Científica
-O desenvolvimento do Descarbonize.ai é fortemente embasado em pesquisa acadêmica. O projeto já gerou dezenas de artigos publicados em conferências e periódicos internacionais de prestígio (como IEEE, Springer e edições do SBrT), abordando temas que vão desde compressão de dados em TinyML até métodos de privacidade em Blockchain para o setor automotivo. A lista completa de publicações pode ser acessada na seção "Resultados" do site.
+# 📚 Produção Científica
 
-*Desenvolvido pela equipe Conect2Ai.*
+O desenvolvimento do **Descarbonize.ai** é fortemente embasado em **pesquisa acadêmica**.
+
+O projeto já gerou **dezenas de artigos publicados em conferências e periódicos internacionais de prestígio**, incluindo:
+
+- **IEEE**
+- **Springer**
+- **SBrT (Simpósio Brasileiro de Telecomunicações)**
+
+Os trabalhos abordam temas como:
+
+- Compressão de dados em **TinyML**
+- **Privacidade em Blockchain**
+- **Sistemas inteligentes para mobilidade sustentável**
+- **Arquiteturas embarcadas de baixo consumo**
+
+A **lista completa de publicações** pode ser acessada na seção **"Resultados"** do site.
+
+---
+
+# 👨‍💻 Desenvolvimento
+
+Projeto desenvolvido pela equipe de pesquisa **Conect2Ai**.
