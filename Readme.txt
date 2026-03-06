@@ -14,7 +14,6 @@ Nosso ecossistema atua em três frentes principais:
 
 ---
 
-
 ## Instituições e Parceiros
 Este projeto é fruto de uma colaboração técnico-científica de excelência, unindo academia e indústria automotiva:
 
@@ -25,6 +24,5 @@ Este projeto é fruto de uma colaboração técnico-científica de excelência, 
 
 ## Produção Científica
 O desenvolvimento do Descarbonize.ai é fortemente embasado em pesquisa acadêmica. O projeto já gerou dezenas de artigos publicados em conferências e periódicos internacionais de prestígio (como IEEE, Springer e edições do SBrT), abordando temas que vão desde compressão de dados em TinyML até métodos de privacidade em Blockchain para o setor automotivo. A lista completa de publicações pode ser acessada na seção "Resultados" do site.
-
 
 *Desenvolvido pela equipe Conect2Ai.*
