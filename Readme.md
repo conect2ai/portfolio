@@ -1,5 +1,5 @@
 # 🚗 Descarbonize.ai - Portfólio
 
-Bem-vindo ao repositório **Descarbonize.ai**.
+Bem-vindo(a) ao repositório do portfólio do projeto **Descarbonize.ai**.
 
 Projeto desenvolvido pela equipe de pesquisa **Conect2Ai**.
