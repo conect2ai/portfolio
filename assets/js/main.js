@@ -212,18 +212,26 @@
   let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
-    navmenulinks.forEach(navmenulink => {
-      if (!navmenulink.hash) return;
+    let position = window.scrollY + 200;
+    let scrolledToBottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 2;
+    let hashLinks = Array.from(navmenulinks).filter(link => link.hash && document.querySelector(link.hash));
+
+    let active = null;
+    hashLinks.forEach(navmenulink => {
       let section = document.querySelector(navmenulink.hash);
-      if (!section) return;
-      let position = window.scrollY + 200;
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
-        navmenulink.classList.add('active');
-      } else {
-        navmenulink.classList.remove('active');
+        active = navmenulink;
       }
-    })
+    });
+
+    // The last section (e.g. FAQ) can be shorter than the viewport, so when the page
+    // is scrolled all the way down its threshold is never reached — force-activate it.
+    if (scrolledToBottom && hashLinks.length) {
+      active = hashLinks[hashLinks.length - 1];
+    }
+
+    navmenulinks.forEach(link => link.classList.remove('active'));
+    if (active) active.classList.add('active');
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);

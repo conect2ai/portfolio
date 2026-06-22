@@ -13,7 +13,7 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Poppins:wght@400;500;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
  <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid position-relative d-flex align-items-center justify-content-between"
-       style="padding-left:120px; padding-right:60px;">
+       style="padding-left: clamp(15px, 6vw, 120px); padding-right: clamp(15px, 3vw, 60px);">
 
     <a href="index.html" class="logo d-flex align-items-center text-decoration-none" style="gap:20px;">
       
@@ -59,6 +59,15 @@
     </nav>
 
   </div>
+
+  <style>
+    /* Header responsivo: escala os 3 logos de forma fluida para caberem (junto com o menu)
+       em qualquer largura, sem ocultar nenhuma marca */
+    @media (max-width: 768px) {
+      #header .logo { gap: 6px !important; }
+      #header .logo img { height: clamp(14px, 4.6vw, 34px) !important; max-height: 34px !important; }
+    }
+  </style>
 </header>
 
  <section id="hero" class="hero section position-relative d-flex align-items-center justify-content-center" style="min-height: 80vh; padding-top: 160px; padding-bottom: 80px; overflow: hidden; background-color: #111;">
@@ -78,9 +87,9 @@
   
   <div class="container position-relative text-center" style="z-index: 2; padding: 0 20px; width: 100%;">
     
-    <h6 style="color: #ffffff; font-size: 30px; font-weight: 700; margin-bottom: 25px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
+    <h1 style="color: #ffffff; font-size: 30px; font-weight: 700; margin-bottom: 25px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
      DESCARBONIZE.AI: SISTEMA INTEGRADO PARA ANÁLISE, MONETIZAÇÃO E DESCARBONIZAÇÃO DO TRÁFEGO VEICULAR
-    </h6>
+    </h1>
     
     <p style="color: #e2e8f0; font-size: 18px; max-width: 850px; margin: 0 auto 40px auto; line-height: 1.7; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); text-align: center;">
       Criamos um sistema de conectividade veicular focado na descarbonização. Aplicamos técnicas de Inteligência Artificial na borda para analisar a eficiência energética e estabelecemos um serviço de monetização seguro via rede Blockchain para a geração de créditos de carbono.
@@ -100,7 +109,7 @@
     }
     
     @media (max-width: 768px) {
-      #hero h6 { font-size: 22px !important; }
+      #hero h1 { font-size: 22px !important; }
       #hero p { 
         font-size: 16px !important; 
         text-align: center !important;
@@ -429,6 +438,9 @@
             
             <div id="collapseArtigos" class="accordion-collapse collapse" aria-labelledby="headingArtigos" data-bs-parent="#accordionArtigos">
               <div class="accordion-body" style="background-color: #ffffff; padding: 30px 40px;">
+                <p class="text-center mb-4" style="color: #6b7280; font-size: 14.5px;">
+                  Artigos científicos publicados em periódicos e conferências no âmbito do Projeto Descarbonize.ai.
+                </p>
                 <ul class="list-unstyled mb-0" style="color: #4a5568; font-size: 14.5px; line-height: 1.7;">
                   
                   <li class="mb-4 pb-3 border-bottom">
@@ -553,10 +565,300 @@
               </div>
             </div>
           </div>
-          
+
+          <div class="accordion-item" style="border: none; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden; margin-top: 20px;">
+            <h2 class="accordion-header" id="headingFormacao">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormacao" aria-expanded="false" aria-controls="collapseFormacao" style="background-color: #f8f9fa; color: #2c3e50; font-weight: 600; font-size: 16px; padding: 20px 25px;">
+                <i class="bi bi-mortarboard-fill me-3" style="color: #10b981; font-size: 20px;"></i>
+                Formação de Recursos Humanos e Divulgação Científica
+              </button>
+            </h2>
+
+            <div id="collapseFormacao" class="accordion-collapse collapse" aria-labelledby="headingFormacao" data-bs-parent="#accordionArtigos">
+              <div class="accordion-body" style="background-color: #ffffff; padding: 30px 40px;">
+
+                <p class="text-center mb-4" style="color: #6b7280; font-size: 14.5px;">
+                  Trabalhos acadêmicos desenvolvidos no âmbito do Projeto Descarbonize.ai.
+                </p>
+
+                <ul class="nav nav-pills justify-content-center mb-5" id="formacao-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-graduacao" data-bs-toggle="pill" data-bs-target="#content-graduacao" type="button" role="tab" aria-controls="content-graduacao" aria-selected="true">Graduação</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-mestrado" data-bs-toggle="pill" data-bs-target="#content-mestrado" type="button" role="tab" aria-controls="content-mestrado" aria-selected="false">Mestrado</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-doutorado" data-bs-toggle="pill" data-bs-target="#content-doutorado" type="button" role="tab" aria-controls="content-doutorado" aria-selected="false">Doutorado</button>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="formacao-tabs-content">
+
+                  <!-- Graduação (TCC) -->
+                  <div class="tab-pane fade show active" id="content-graduacao" role="tabpanel" aria-labelledby="tab-graduacao">
+                    <div class="row gy-4 justify-content-center">
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Trabalho de Conclusão de Curso</span>
+                            <span class="thesis-year">2025</span>
+                          </div>
+                          <h4 class="thesis-author">Miguel Euripedes Nogueira do Amaral</h4>
+                          <p class="thesis-title">"Desenvolvimento de uma solução baseada em Blockchain para armazenamento e rastreamento de dados veiculares"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Engenharia de Computação</span>
+                            <span class="thesis-inst">Universidade Federal do Rio Grande do Norte</span>
+                          </p>
+                          <div class="thesis-footer">
+                            <a href="https://repositorio.ufrn.br/items/10bcfa6f-62f5-4782-879c-db420ee98399" target="_blank" class="thesis-link">Acessar Trabalho <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 12px;"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Trabalho de Conclusão de Curso</span>
+                            <span class="thesis-year">2025</span>
+                          </div>
+                          <h4 class="thesis-author">Ludmila Vinólia Guimarães Gomes</h4>
+                          <p class="thesis-title">"Estimativa de Emissões em Veículos a Combustão baseado em Redes Neurais LSTM e Análise de Incertezas via Monte Carlo Dropout"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Engenharia de Computação</span>
+                            <span class="thesis-inst">Universidade Federal da Paraíba</span>
+                          </p>                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Mestrado (Dissertação) -->
+                  <div class="tab-pane fade" id="content-mestrado" role="tabpanel" aria-labelledby="tab-mestrado">
+                    <div class="row gy-4 justify-content-center">
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Dissertação de Mestrado</span>
+                            <span class="thesis-year">2025</span>
+                          </div>
+                          <h4 class="thesis-author">Morsinaldo de Azevedo Medeiros</h4>
+                          <p class="thesis-title">"MMCloud: um algoritmo de clustering não supervisionado online para análise do comportamento do motorista"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Programa de Pós-Graduação em Engenharia Elétrica e de Computação (PPgEEC)</span>
+                            <span class="thesis-inst">Universidade Federal do Rio Grande do Norte</span>
+                          </p>
+                          <div class="thesis-footer">
+                            <a href="https://repositorio.ufrn.br/items/a9cd7951-2ac7-4cc6-8ca7-c7086bff29c0" target="_blank" class="thesis-link">Acessar Trabalho <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 12px;"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Dissertação de Mestrado</span>
+                            <span class="thesis-year">2025</span>
+                          </div>
+                          <h4 class="thesis-author">Thaís de Araújo de Medeiros</h4>
+                          <p class="thesis-title">"Metodologia orientada a agentes de linguagem para assistência automotiva: integrando engenharia de Prompts em Chatbots avançados"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Programa de Pós-Graduação em Engenharia Elétrica e de Computação (PPgEEC)</span>
+                            <span class="thesis-inst">Universidade Federal do Rio Grande do Norte</span>
+                          </p>
+                          <div class="thesis-footer">
+                            <a href="https://repositorio.ufrn.br/items/06b0dfb8-756b-4589-8560-456279dfd642" target="_blank" class="thesis-link">Acessar Trabalho <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 12px;"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Dissertação de Mestrado</span>
+                            <span class="thesis-year">2025</span>
+                          </div>
+                          <h4 class="thesis-author">Vinício de Araújo Matos</h4>
+                          <p class="thesis-title">"Análise e modelagem das emissões instantâneas de CO2 em veículos de combustão interna por meio de dados OBD-II e redes neurais artificiais"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Programa de Pós-Graduação em Engenharia Elétrica (PPGEE)</span>
+                            <span class="thesis-inst">Universidade Federal da Paraíba</span>
+                          </p>
+                          <div class="thesis-footer">
+                            <a href="https://www.cear.ufpb.br/juan/wp-content/uploads/2026/02/2026-VINICIO-TRABALHO_%20FINAL-compressor.pdf" target="_blank" class="thesis-link">Acessar Trabalho <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 12px;"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Dissertação de Mestrado</span>
+                            <span class="thesis-year">2026</span>
+                          </div>
+                          <h4 class="thesis-author">Daniel Marques da Silva</h4>
+                          <p class="thesis-title">"Otimização de Hiperparâmetros para Estimação de Incerteza Fora de Distribuição em Redes Neurais com Aproximação de Laplace"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Programa de Pós-Graduação em Metrologia e Tecnologia (PPGMT)</span>
+                            <span class="thesis-inst">Instituto Nacional de Metrologia, Qualidade e Tecnologia</span>
+                          </p>                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Dissertação de Mestrado</span>
+                            <span class="thesis-year">2026</span>
+                          </div>
+                          <h4 class="thesis-author">Paulo Eduardo Silva dos Santos</h4>
+                          <p class="thesis-title">"Teste Metamórfico para Sistemas de Medição baseados em Aprendizado de Máquina"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Programa de Pós-Graduação em Metrologia e Tecnologia (PPGMT)</span>
+                            <span class="thesis-inst">Instituto Nacional de Metrologia, Qualidade e Tecnologia</span>
+                          </p>                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- Doutorado (Tese) -->
+                  <div class="tab-pane fade" id="content-doutorado" role="tabpanel" aria-labelledby="tab-doutorado">
+                    <div class="row gy-4 justify-content-center">
+
+                      <div class="col-lg-8">
+                        <div class="thesis-card">
+                          <div class="thesis-card-top">
+                            <span class="thesis-badge">Tese de Doutorado</span>
+                            <span class="thesis-year">2026</span>
+                          </div>
+                          <h4 class="thesis-author">Thommas Kevin Sales Flores</h4>
+                          <p class="thesis-title">"Treinamento Consciente de Quantização Vetorial Evolutiva: Um Método Adaptativo para Compactar Modelos de Aprendizado de Máquina"</p>
+                          <p class="thesis-meta">
+                            <span class="thesis-course">Programa de Pós-Graduação em Engenharia Elétrica e de Computação (PPgEEC)</span>
+                            <span class="thesis-inst">Universidade Federal do Rio Grande do Norte</span>
+                          </p>
+                          <div class="thesis-footer">
+                            <a href="https://drive.google.com/file/d/1m4kKZNBMGjBrEHC2dQ0hvJ2s3ffVlHRf/view?usp=sharing" target="_blank" class="thesis-link">Acessar Trabalho <i class="bi bi-box-arrow-up-right ms-1" style="font-size: 12px;"></i></a>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+
+  <style>
+    .thesis-card {
+      background: #ffffff;
+      border: 1px solid #e9ecef;
+      border-left: 4px solid #10b981;
+      border-radius: 12px;
+      padding: 25px;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thesis-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(16,185,129,0.15);
+      border-left-color: #34d399;
+    }
+
+    .thesis-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .thesis-badge {
+      background: rgba(16,185,129,0.1);
+      color: #059669;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .thesis-year {
+      background: #2c3e50;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .thesis-author {
+      color: #2c3e50;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .thesis-title {
+      color: #4a5568;
+      font-size: 14.5px;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .thesis-meta {
+      margin-bottom: 18px;
+    }
+
+    .thesis-course {
+      display: block;
+      color: #374151;
+      font-size: 13.5px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .thesis-inst {
+      display: block;
+      color: #94a3b8;
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin-top: 3px;
+    }
+
+    .thesis-footer {
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .thesis-link {
+      text-decoration: none;
+      color: #10b981;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .thesis-link:hover {
+      color: #059669;
+    }
+  </style>
+
 </section>
  <section id="partners-carousel" class="partners section" style="background-color: #f8f9fa; padding: 60px 0;">
 
@@ -876,11 +1178,11 @@
 
               <div class="accordion-item border-0 mb-3 shadow-sm rounded">
                 <h2 class="accordion-header" id="faqHeading1">
-                  <button class="accordion-button bg-white text-dark fw-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                  <button class="accordion-button collapsed bg-white text-dark fw-bold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
                     <span class="text-success me-2">1.</span> Qual é o objetivo principal da proposta?
                   </button>
                 </h2>
-                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
                   <div class="accordion-body text-muted pt-0 bg-white rounded-bottom">
                     Criar um sistema de conectividade veicular focado na descarbonização e monitoramento ambiental, priorizando o monitoramento de variáveis para tráfego inteligente e a geração de créditos de carbono.
                   </div>
