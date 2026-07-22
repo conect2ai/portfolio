@@ -1592,8 +1592,514 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Descarbonize.ai — estilos consolidados
+# (antes espalhados em atributos style="" e blocos <style> do index.html)
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+
+/* Seções com fundo alternativo (Metodologia, Parceiros) */
+.section-alt {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+
+/* Cabeçalho: logos */
+#header .header-container {
+  padding-left: clamp(15px, 6vw, 120px);
+  padding-right: clamp(15px, 3vw, 60px);
+}
+
+#header .logo {
+  gap: 20px;
+}
+
+#header .logo-brand {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+#header .logo-main {
+  height: 120px;
+  max-height: 120px; /* o template limita .header .logo img a 32px; o logo principal é maior */
+  width: auto;
+}
+
+/* Escala os 3 logos de forma fluida para caberem (junto com o menu)
+   em qualquer largura, sem ocultar nenhuma marca */
+@media (max-width: 768px) {
+  #header .logo {
+    gap: 6px;
+  }
+
+  #header .logo img {
+    height: clamp(14px, 4.6vw, 34px);
+    max-height: 34px;
+  }
+}
+
+/* Hero */
+.hero {
+  min-height: 80vh;
+  padding-top: 160px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.hero .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.45);
+  z-index: 1;
+}
+
+.hero .hero-content {
+  z-index: 2;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero p {
+  color: #e2e8f0;
+  font-size: 18px;
+  max-width: 850px;
+  margin: 0 auto 40px auto;
+  line-height: 1.7;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.hero .btn-get-started {
+  font-weight: 600;
+  font-size: 22px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  background-color: #10b981;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #10b981;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.hero .btn-get-started:hover {
+  background-color: transparent;
+  color: #10b981;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Sobre o Projeto */
+.about .content ul.about-list {
+  display: inline-block;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+
+/* Metodologia em 9 Passos */
+.services .service-item {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  border-bottom: 3px solid #10b981;
+}
+
+/* os seletores :hover repetidos preservam a cor mesmo com a regra
+   .service-item:hover do template, que pintaria o conteúdo de branco */
+.services .service-item .icon i,
+.services .service-item:hover .icon i {
+  font-size: 32px;
+  color: #10b981;
+}
+
+.services .service-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.services .service-item h4 .card-title-link,
+.services .service-item:hover h4 .card-title-link {
+  color: #2c3e50;
+  transition: 0.3s;
+}
+
+.services .service-item p,
+.services .service-item:hover p {
+  color: #4a5568;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* Sombra verde clarinha ao passar o mouse no card */
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(52, 211, 153, 0.25) !important;
+}
+
+/* Muda a cor do título para verde claro ao passar o mouse em qualquer parte do card */
+.service-item:hover .card-title-link {
+  color: #34d399 !important;
+}
+
+/* Resultados: carrossel de cards */
+.result-img-box {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-services .card .result-img-box img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+#resultadosCarousel .carousel-control-prev,
+#resultadosCarousel .carousel-control-next,
+#partnerCarousel .carousel-control-prev,
+#partnerCarousel .carousel-control-next {
+  width: 5%;
+}
+
+#resultadosCarousel .carousel-control-prev-icon,
+#resultadosCarousel .carousel-control-next-icon,
+#partnerCarousel .carousel-control-prev-icon,
+#partnerCarousel .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* Resultados: acordeões de artigos e formação */
+.accordion-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.accordion-card + .accordion-card {
+  margin-top: 20px;
+}
+
+.accordion-card .accordion-button {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 20px 25px;
+}
+
+.accordion-card .accordion-button i {
+  color: #10b981;
+  font-size: 20px;
+}
+
+.accordion-card .accordion-body {
+  background-color: #ffffff;
+  padding: 30px 40px;
+}
+
+.accordion-intro {
+  color: #6b7280;
+  font-size: 14.5px;
+}
+
+.article-list {
+  color: #4a5568;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.article-link,
+.article-link:hover {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.article-link i,
+.thesis-link i {
+  font-size: 12px;
+}
+
+/* Trabalhos acadêmicos (TCC, dissertações e teses) */
+.thesis-card {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-left: 4px solid #10b981;
+  border-radius: 12px;
+  padding: 25px;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.thesis-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+  border-left-color: #34d399;
+}
+
+.thesis-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.thesis-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.thesis-year {
+  background: #2c3e50;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.thesis-author {
+  color: #2c3e50;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.thesis-title {
+  color: #4a5568;
+  font-size: 14.5px;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.thesis-meta {
+  margin-bottom: 18px;
+}
+
+.thesis-course {
+  display: block;
+  color: #374151;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.thesis-inst {
+  display: block;
+  color: #94a3b8;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-top: 3px;
+}
+
+.thesis-footer {
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.thesis-link {
+  text-decoration: none;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.thesis-link:hover {
+  color: #059669;
+}
+
+/* Empresas e Instituições Parceiras */
+#partners-carousel .section-title h2 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.partner-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  min-height: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid #10b981;
+  transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.partner-card .logo-container {
+  height: 120px;
+}
+
+.partner-card .logo-container img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.partner-card .logo-container img.partner-logo-75 {
+  max-height: 75%;
+  max-width: 75%;
+}
+
+.partner-card .logo-container img.partner-logo-70 {
+  max-height: 70%;
+  max-width: 70%;
+}
+
+.partner-card .logo-container img.partner-logo-60 {
+  max-height: 60%;
+  max-width: 60%;
+}
+
+/* Equipe: abas e cards de membros */
+.nav-pills .nav-link {
+  color: #2c3e50;
+  border-radius: 30px;
+  padding: 10px 30px;
+  font-weight: 600;
+  margin: 5px 10px;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+.member-card {
+  background: #f8f9fa;
+  padding: 30px 20px;
+  border-radius: 15px;
+  border-bottom: 4px solid #10b981;
+  transition: all 0.3s ease;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+}
+
+.member-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.member-card .role {
+  display: block;
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* Rodapé */
+#footer {
+  background-color: #ffffff;
+  border-top: 4px solid #10b981;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#footer .footer-about .logo {
+  height: 95px;
+}
+
+#footer .footer-logo {
+  height: 95px;
+  max-height: none;
+  width: auto;
+}
+
+#footer .footer-about .logo span {
+  color: #10b981;
+}
+
+#footer .footer-about p {
+  color: #4a5568;
+  margin-top: -10px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+#footer h5 {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top: 32px;
+  margin-bottom: 12px;
+}
+
+#footer .footer-partners p,
+#footer .footer-contact p {
+  color: #4a5568;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#footer .footer-partners p:last-child,
+#footer .footer-contact p:last-child {
+  margin-bottom: 0;
 }
